@@ -4,15 +4,17 @@
 #include "vertex.h"
 
 template<typename G>
-class Edge {
-    public:
-        typedef typename G::E E;
-        typedef typename G::vertex vertex;
+class Edge {    
+    typedef typename G::E E;
+    typedef typename G::vertex vertex;
 
-        vertex* vertexes[2];
+    vertex* vertexes[2];
 
-    private:
-        E data;
+public:
+    E data;
+
+    template<typename, typename>
+    friend class Graph; 
 };
 
 #endif
