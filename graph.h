@@ -12,6 +12,8 @@ using namespace std;
 template<typename V, typename E>
 class Graph {
     public:
+        typedef V VV;
+        typedef E EE;
         typedef Graph<V, E> self;
         typedef Vertex<self> vertex;
         typedef Edge<self> edge;
@@ -27,7 +29,7 @@ class Graph {
 
     public:
         Graph() = default;
-        ~Graph();
+        ~Graph() {}
 
         /**
          * Creates a new vertex in the graph with some data 
@@ -52,7 +54,7 @@ class Graph {
          * @param direction true if has direction, false if it is a two side direction (non directed graph)
          * @return true if inserted, false if the edge is already in the graph
          **/
-        bool createEdge(V start, V end, E data, bool direction);
+        bool createEdge(V start, V end, E data, bool direction = false);
 
         /**
          * Deletes a vertex in the graph
@@ -116,7 +118,7 @@ class Graph {
         /**
          * Detect if the graph is strongly connected (only for directed graphs)
          * @return true if it is strongly connected 
-         * @throw exception if this method is called from a non-directed graph
+         * @throw exception if this method is called from a nondirected graph
          **/
         bool isStronglyConnected() const throw();
 

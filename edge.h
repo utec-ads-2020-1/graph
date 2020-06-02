@@ -5,7 +5,7 @@
 
 template<typename G>
 class Edge {    
-    typedef typename G::E E;
+    typedef typename G::EE E;
     typedef typename G::vertex vertex;
 
     vertex* vertexes[2];

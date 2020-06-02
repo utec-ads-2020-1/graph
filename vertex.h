@@ -6,7 +6,7 @@ class Graph;
 
 template <typename G>
 class Vertex {
-    typedef typename G::V V;
+    typedef typename G::VV V;
     typedef typename G::EdgeSeq EdgeSeq;
 
     EdgeSeq edges;
